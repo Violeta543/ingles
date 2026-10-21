@@ -2580,7 +2580,8 @@ const CONFIG = {
   team: 'Kevin, Violeta, Yonatan',   // aparece en la pantalla de inicio y el pie de página
   idleSeconds: 75,                   // sin tocar nada → modo atracción
   qrUrl: '',                         // pon aquí la URL pública y aparecerá un código QR
-  customTrack: '/doom.mp4', // si existe este archivo, suena en vez de la música generada
+  customTrack: 'doom.mp4',           // TU canción (archivo junto al index.html, SIN barra '/' al inicio)
+  generatedMusic: false,             // false = nunca suena la música generada por la página
   fullscreenOnStart: false,
 };
 
@@ -2667,20 +2668,20 @@ const GAMES = [
 ];
 
 const WEAPON_INFO = {
-  'Fists': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Your bare hands. Always with you.', es: 'Tus puños. Siempre contigo.' },
-  'Chainsaw': {img:'/armas/1993/Chainsaw_doom_1993.jfif', en: 'Rips through demons up close. In the modern games it kills most enemies instantly and showers you with ammo.', es: 'Despedaza demonios de cerca. En los juegos modernos mata a la mayoría al instante y te llena de munición.' },
-  'Super Shotgun': {img:'/armas/1993/', en: 'Double barrel, brutal at close range. Debuted in DOOM II (1994).', es: 'Doble cañón, brutal de cerca. Debutó en DOOM II (1994).' },
-  'BFG 9000': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'The most powerful weapon in the arsenal. Fires a huge ball of green energy.', es: 'El arma más poderosa del arsenal. Dispara una enorme bola de energía verde.' },
-  'Plasma Rifle': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Energy weapon with a very high rate of fire.', es: 'Arma de energía con una cadencia de disparo muy alta.' },
-  'Rocket Launcher': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Explosive rockets with area damage. Watch the blast radius.', es: 'Cohetes explosivos con daño en área. Cuidado con el radio de la explosión.' },
-  'Unmaker': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Unique to DOOM 64. A demonic laser you upgrade by finding Demon Keys.', es: 'Exclusiva de DOOM 64. Un láser demoníaco que mejoras al encontrar Llaves Demoníacas.' },
-  'Unmaykr': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'A callback to the Unmaker from DOOM 64, back in Eternal.', es: 'Un guiño al Unmaker de DOOM 64, de regreso en Eternal.' },
-  'Flashlight': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'The signature item of DOOM 3. You cannot hold it and a weapon at once.', es: 'El objeto insignia de DOOM 3. No puedes sostenerla junto con un arma.' },
-  'Soul Cube': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'A demonic artifact in DOOM 3 that devours souls and charges with kills.', es: 'Un artefacto demoníaco de DOOM 3 que devora almas y se carga con cada muerte.' },
-  'Gauss Cannon': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Heavy cannon in DOOM (2016). Its siege mode charges a devastating shot.', es: 'Cañón pesado de DOOM (2016). Su modo asedio carga un disparo devastador.' },
-  'Flame Belch': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'Shoulder-mounted fire launcher in Eternal. Burning demons drop armor.', es: 'Lanzallamas de hombro en Eternal. Los demonios en llamas sueltan armadura.' },
-  'Crucible': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'A blade in Eternal that kills almost any demon in a single hit. Limited charges.', es: 'Una hoja de Eternal que mata a casi cualquier demonio de un golpe. Cargas limitadas.' },
-  'Shield Saw': {img:'/armas/1993/fists_doom_1993.jpeg', en: 'The heart of The Dark Ages: block, parry, throw it, or charge behind it.', es: 'El corazón de The Dark Ages: bloquear, parar, lanzarlo o embestir detrás de él.' },
+  'Fists': { en: 'Your bare hands. Always with you.', es: 'Tus puños. Siempre contigo.' },
+  'Chainsaw': { en: 'Rips through demons up close. In the modern games it kills most enemies instantly and showers you with ammo.', es: 'Despedaza demonios de cerca. En los juegos modernos mata a la mayoría al instante y te llena de munición.' },
+  'Super Shotgun': { en: 'Double barrel, brutal at close range. Debuted in DOOM II (1994).', es: 'Doble cañón, brutal de cerca. Debutó en DOOM II (1994).' },
+  'BFG 9000': { en: 'The most powerful weapon in the arsenal. Fires a huge ball of green energy.', es: 'El arma más poderosa del arsenal. Dispara una enorme bola de energía verde.' },
+  'Plasma Rifle': { en: 'Energy weapon with a very high rate of fire.', es: 'Arma de energía con una cadencia de disparo muy alta.' },
+  'Rocket Launcher': { en: 'Explosive rockets with area damage. Watch the blast radius.', es: 'Cohetes explosivos con daño en área. Cuidado con el radio de la explosión.' },
+  'Unmaker': { en: 'Unique to DOOM 64. A demonic laser you upgrade by finding Demon Keys.', es: 'Exclusiva de DOOM 64. Un láser demoníaco que mejoras al encontrar Llaves Demoníacas.' },
+  'Unmaykr': { en: 'A callback to the Unmaker from DOOM 64, back in Eternal.', es: 'Un guiño al Unmaker de DOOM 64, de regreso en Eternal.' },
+  'Flashlight': { en: 'The signature item of DOOM 3. You cannot hold it and a weapon at once.', es: 'El objeto insignia de DOOM 3. No puedes sostenerla junto con un arma.' },
+  'Soul Cube': { en: 'A demonic artifact in DOOM 3 that devours souls and charges with kills.', es: 'Un artefacto demoníaco de DOOM 3 que devora almas y se carga con cada muerte.' },
+  'Gauss Cannon': { en: 'Heavy cannon in DOOM (2016). Its siege mode charges a devastating shot.', es: 'Cañón pesado de DOOM (2016). Su modo asedio carga un disparo devastador.' },
+  'Flame Belch': { en: 'Shoulder-mounted fire launcher in Eternal. Burning demons drop armor.', es: 'Lanzallamas de hombro en Eternal. Los demonios en llamas sueltan armadura.' },
+  'Crucible': { en: 'A blade in Eternal that kills almost any demon in a single hit. Limited charges.', es: 'Una hoja de Eternal que mata a casi cualquier demonio de un golpe. Cargas limitadas.' },
+  'Shield Saw': { en: 'The heart of The Dark Ages: block, parry, throw it, or charge behind it.', es: 'El corazón de The Dark Ages: bloquear, parar, lanzarlo o embestir detrás de él.' },
 };
 
 const BOSS_INFO = {
@@ -2691,6 +2692,122 @@ const BOSS_INFO = {
   'Guardian of Hell': { en: 'The final boss of DOOM 3.', es: 'El jefe final de DOOM 3.' },
   'Barons of Hell': { en: 'Two of them guard the end of Episode 1 in the original game.', es: 'Dos de ellos custodian el final del Episodio 1 del juego original.' },
   'Khan Maykr': { en: 'The main antagonist of Eternal.', es: 'La antagonista principal de Eternal.' },
+};
+
+/* Imagen propia de cada arma/jefe en CADA juego: carpeta armas/<año>/ */
+const GAME_IMGS = {
+ "1993": {
+  "Fists": "armas/1993/fists_doom_1993.jpeg",
+  "Chainsaw": "armas/1993/Chainsaw_doom_1993.jfif",
+  "Pistol": "armas/1993/Pistol_doom_1993.jfif",
+  "Shotgun": "armas/1993/Shotgun_doom_1993.jfif",
+  "Chaingun": "armas/1993/Chaingun_doom_1993.jfif",
+  "Rocket Launcher": "armas/1993/Rocket Launcher_doom_1993.jfif",
+  "Plasma Rifle": "armas/1993/Plasma Rifle_doom_1993.jfif",
+  "BFG 9000": "armas/1993/BFG 9000_doom_1993.jfif",
+  "Barons of Hell": "armas/1993/Barons of Hell.jfif",
+  "Cyberdemon": "armas/1993/Cyberdemon.jfif",
+  "Spider Mastermind": "armas/1993/SpiderDemon.webp"
+ },
+ "1994": {
+  "Fists": "armas/1994/fists.jpeg",
+  "Chainsaw": "armas/1994/Chainsaw.jfif",
+  "Pistol": "armas/1994/Pistol.jfif",
+  "Shotgun": "armas/1994/Shotgun.jfif",
+  "Super Shotgun": "armas/1994/Super Shotgun.png",
+  "Chaingun": "armas/1994/Chaingun.jfif",
+  "Rocket Launcher": "armas/1994/Rocket Launcher.jfif",
+  "Plasma Rifle": "armas/1994/Plasma Rifle.jfif",
+  "BFG 9000": "armas/1994/BFG 9000.jfif",
+  "Icon of Sin": "armas/1994/Icon of Sin.jfif"
+ },
+ "1997": {
+  "Fists": "armas/1997/Fists.webp",
+  "Chainsaw": "armas/1997/Chainsaw.jfif",
+  "Pistol": "armas/1997/Pistol.jfif",
+  "Super Shotgun": "armas/1997/Super Shotgun.jfif",
+  "Chaingun": "armas/1997/Chaingun.jfif",
+  "Rocket Launcher": "armas/1997/Rocket Launcher.jpg",
+  "Plasma Rifle": "armas/1997/Plasma Rifle.jfif",
+  "BFG 9000": "armas/1997/BFG 9000.jfif",
+  "Unmaker": "armas/1997/Unmaker.jpg",
+  "Mother Demon": "armas/1997/Motherdemon.webp"
+ },
+ "2004": {
+  "Fists": "armas/2004/Fists.jfif",
+  "Flashlight": "armas/2004/Flashlight.jfif",
+  "Chainsaw": "armas/2004/Chainsaw.jfif",
+  "Pistol": "armas/2004/Pistol.jfif",
+  "Shotgun": "armas/2004/Shotgun.jfif",
+  "Machine Gun": "armas/2004/Machine Gun.jfif",
+  "Chaingun": "armas/2004/Chaingun.jfif",
+  "Plasma Gun": "armas/2004/Plasma Gun.jfif",
+  "Rocket Launcher": "armas/2004/Rocket Launcher.jfif",
+  "Grenades": "armas/2004/Grenades.jfif",
+  "BFG 9000": "armas/2004/BFG 9000.jfif",
+  "Soul Cube": "armas/2004/Soul Cube.jfif",
+  "Vagary": "armas/2004/Vagary.jfif",
+  "Sabaoth": "armas/2004/Sabaoth.jfif",
+  "Guardian of Hell": "armas/2004/Guardian of Hell.jfif",
+  "Cyberdemon": "armas/2004/Cyberdemon.jfif"
+ },
+ "2016": {
+  "Fists": "armas/2016/Fists.jfif",
+  "Chainsaw": "armas/2016/Chainsaw.webp",
+  "Pistol": "armas/2016/Pistol.jfif",
+  "Combat Shotgun": "armas/2016/Combat Shotgun.jfif",
+  "Heavy Assault Rifle": "armas/2016/Heavy Assault Rifle.jfif",
+  "Plasma Rifle": "armas/2016/Plasma Rifle.jfif",
+  "Rocket Launcher": "armas/2016/Rocket Launcher.jfif",
+  "Super Shotgun": "armas/2016/Super Shotgun.jfif",
+  "Gauss Cannon": "armas/2016/Gauss Cannon.jfif",
+  "Chaingun": "armas/2016/Chaingun.jfif",
+  "BFG 9000": "armas/2016/BFG 9000.jfif",
+  "Cyberdemon": "armas/2016/Cyberdemon.jfif",
+  "Hell Guard": "armas/2016/Hell Guard.jfif",
+  "Spider Mastermind": "armas/2016/Spider Mastermind.jfif"
+ },
+ "2020": {
+  "Doomblade": "armas/2020/Doomblade.jfif",
+  "Chainsaw": "armas/2020/Chainsaw.jfif",
+  "Flame Belch": "armas/2020/Flame Belch.jfif",
+  "Combat Shotgun": "armas/2020/Combat Shotgun.jfif",
+  "Heavy Cannon": "armas/2020/Heavy Cannon.jfif",
+  "Plasma Rifle": "armas/2020/Plasma Rifle.jfif",
+  "Rocket Launcher": "armas/2020/Rocket Launcher.jfif",
+  "Super Shotgun": "armas/2020/Super Shotgun.jfif",
+  "Ballista": "armas/2020/Ballista.jfif",
+  "Chaingun": "armas/2020/Chaingun.jfif",
+  "BFG 9000": "armas/2020/BFG 9000.jfif",
+  "Unmaykr": "armas/2020/Unmaykr.jfif",
+  "Crucible": "armas/2020/Crucible.jfif",
+  "Marauder": "armas/2020/Marauder.jfif",
+  "Gladiator": "armas/2020/Gladiator.jfif",
+  "Khan Maykr": "armas/2020/Khan Maykr.jfif",
+  "Icon of Sin": "armas/2020/Icon of Sin.jfif"
+ },
+ "2025": {
+  "Shield Saw": "armas/2025/Shield Saw.jfif",
+  "Power Gauntlet": "armas/2025/Power Gauntlet.jfif",
+  "Flail": "armas/2025/Flail.jfif",
+  "Dreadmace": "armas/2025/Dreadmace.jfif",
+  "Combat Shotgun": "armas/2025/Combat Shotgun.jfif",
+  "Super Shotgun": "armas/2025/Super Shotgun.jfif",
+  "Shredder": "armas/2025/Shredder.jfif",
+  "Impaler": "armas/2025/Impaler.jfif",
+  "Accelerator": "armas/2025/Accelerator.jfif",
+  "Cycler": "armas/2025/Cycler.jfif",
+  "Pulverizer": "armas/2025/Pulverizer.jfif",
+  "Ravager": "armas/2025/Ravager.jfif",
+  "Chainshot": "armas/2025/Chainshot.jfif",
+  "Grenade Launcher": "armas/2025/grenade launcher.jpg",
+  "Rocket Launcher": "armas/2025/Rocket Launcher.jpeg",
+  "Ballistic Force Crossbow": "armas/2025/Ballistic Force Crossbow.webp",
+  "Vagary Champion": "armas/2025/Vagary Champion.jfif",
+  "Agaddon Champion": "armas/2025/Agaddon Champion.jfif",
+  "Komodo Champion": "armas/2025/Komodo Champion.jfif",
+  "Kreed Maykr": "armas/2025/Kreed Maykr.jfif"
+ }
 };
 
 const SECTORS = [
@@ -3055,7 +3172,7 @@ function distCurve(k) {
 const Snd = {
   ctx: null, ready: false, vol: 0.8, musicOn: true, sfxOn: true,
   playing: false, timer: null, step: 0, nextT: 0, lastBass: 0,
-  custom: null, customOk: false, pad: null,
+  custom: null, customFailed: false, pad: null,
 
   init() {
     if (this.ready) return true;
@@ -3108,11 +3225,10 @@ const Snd = {
     try {
       const a = new Audio();
       a.loop = true; a.preload = 'auto';
-      a.addEventListener('canplaythrough', () => { this.customOk = true; }, { once: true });
-      a.addEventListener('error', () => { this.customOk = false; });
+      a.addEventListener('error', () => { this.customFailed = true; console.warn('No se pudo cargar la canción:', CONFIG.customTrack); });
       a.src = CONFIG.customTrack;
-      this.custom = a; a.load();
-    } catch (e) { /* sin archivo propio: se usa la música generada */ }
+      this.custom = a;
+    } catch (e) { this.customFailed = true; }
   },
 
   setVolume(v) {
@@ -3124,14 +3240,18 @@ const Snd = {
   /* ---------------- música ---------------- */
   startMusic() {
     if (!this.musicOn) return;
-    if (this.customOk && this.custom) {
+    if (this.custom && !this.customFailed) {
       this.custom.volume = Math.min(1, this.vol * 0.8);
-      this.custom.play().catch(() => {});
-      this.playing = true; return;
+      this.playing = true;
+      this.custom.play().catch(() => { this.customFailed = true; this.playing = false; if (CONFIG.generatedMusic) this.startSynth(); });
+      return;
     }
+    if (CONFIG.generatedMusic) this.startSynth();
+  },
+  startSynth() {
     if (!this.ready && !this.init()) return;
     this.ctx.resume();
-    if (this.playing) return;
+    if (this.timer) return;
     this.playing = true;
     this.step = 0; this.nextT = this.ctx.currentTime + 0.12;
     this.startPad();
@@ -3606,17 +3726,21 @@ function paintModal() {
         <div class="font-display text-2xl font-extrabold" style="color:${c}">${esc(t(UI.didYouKnow))}</div>
         <p class="mt-1 text-sm leading-relaxed text-bone/90">${esc(t(g.fact))}</p></div>`;
   } else if (S.tab === 'weapons') {
-    p.innerHTML = `<div class="grid gap-2 sm:grid-cols-2">${g.weapons.map(w => {
-      const info = WEAPON_INFO[w];
+    const imgs = GAME_IMGS[g.year] || {};
+    p.innerHTML = `<div class="grid gap-3 sm:grid-cols-2">${g.weapons.map(w => {
+      const info = WEAPON_INFO[w], src = imgs[w];
       return `<div class="flex gap-3 bg-pit p-3">
-        <div class="relative flex h-11 w-16 shrink-0 items-center justify-center overflow-hidden font-display text-xl font-black text-abyss" style="background:${c}">${esc(w.split(' ').map(x => x[0]).join('').slice(0, 2).toUpperCase())}<img src="img/weapons/${slug(w)}.png" alt="" class="absolute inset-0 h-full w-full bg-pit object-contain p-1" onerror="this.remove()"></div>
+        <div class="relative flex shrink-0 items-center justify-center overflow-hidden font-display font-black" style="width:9rem;height:6.5rem;background:#12080A;color:${c};font-size:2rem">${esc(w.split(' ').map(x => x[0]).join('').slice(0, 2).toUpperCase())}${src ? `<img src="${encodeURI(src)}" alt="${esc(w)}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;background:#12080A" onerror="this.remove()">` : ''}</div>
         <div><div class="font-semibold leading-tight text-bone">${esc(w)}</div>${info ? `<p class="mt-1 text-xs leading-snug text-ash">${esc(t(info))}</p>` : ''}</div></div>`;
     }).join('')}</div>`;
   } else {
+    const imgs = GAME_IMGS[g.year] || {};
     p.innerHTML = `<div class="space-y-3">${g.bosses.map(b => {
-      const info = BOSS_INFO[b];
+      const info = BOSS_INFO[b], src = imgs[b];
       return `<div class="flex items-start gap-4 bg-pit p-4">
-        <svg width="24" height="24" viewBox="0 0 40 40" class="mt-1 shrink-0"><polygon points="20,4 33.6,33.6 2.6,14.4 37.4,14.4 6.4,33.6" fill="none" stroke="#B01218" stroke-width="2.4"/></svg>
+        <div class="relative flex shrink-0 items-center justify-center overflow-hidden" style="width:8rem;height:8rem;background:#12080A">
+          <svg width="36" height="36" viewBox="0 0 40 40"><polygon points="20,4 33.6,33.6 2.6,14.4 37.4,14.4 6.4,33.6" fill="none" stroke="#B01218" stroke-width="2.4"/></svg>
+          ${src ? `<img src="${encodeURI(src)}" alt="${esc(b)}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;background:#12080A" onerror="this.remove()">` : ''}</div>
         <div><div class="font-hell text-3xl leading-none text-bone">${esc(b)}</div>${info ? `<p class="mt-2 text-sm text-ash">${esc(t(info))}</p>` : ''}</div></div>`;
     }).join('')}</div>`;
   }

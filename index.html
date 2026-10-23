@@ -100,7 +100,28 @@ body.locked #deckNav{display:none}
       </div>
     </section>
 
-    <!-- 2 · CÓMO SE JUEGA -->
+    <!-- 2 · HISTORIA -->
+    <section id="history" class="sector bg-abyss">
+      <div class="wrap">
+        <h2 class="h-sec" data-en="History" data-es="Historia">History</h2>
+        <p class="lede" data-en="Thirty-two years in seven releases. Tap any year to open that game." data-es="Treinta y dos años en siete lanzamientos. Toca cualquier año para abrir ese juego.">Thirty-two years in seven releases.</p>
+        <div id="timeline" class="tl mt-14"></div>
+        <div id="milestones" class="mt-16 grid gap-5 md:grid-cols-3"></div>
+        <div class="mt-16">
+          <h3 class="font-display text-4xl font-extrabold text-bone" data-en="Then and Now" data-es="Antes y ahora">Then and Now</h3>
+          <p class="mt-2 max-w-xl text-ash" data-en="Drag the bar. Flat sprites versus a modern engine: same idea, same speed." data-es="Arrastra la barra. Sprites planos contra un motor moderno: misma idea, misma velocidad.">Drag the bar.</p>
+          <div id="cmp" class="cmp mt-6 max-w-5xl">
+            <img class="now" id="cmpNow" alt="DOOM The Dark Ages gameplay" draggable="false">
+            <img class="then" id="cmpThen" alt="DOOM 1993 gameplay" draggable="false">
+            <span class="lab left-3 text-gore">1993</span><span class="lab right-3 text-hellfire">2025</span>
+            <div class="bar"></div>
+            <input id="cmpRange" type="range" min="2" max="98" value="50" aria-label="Compare 1993 and 2025">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · CÓMO SE JUEGA -->
     <section id="play" class="sector bg-abyss">
       <div class="wrap">
         <h2 class="h-sec" data-en="How to Play" data-es="Cómo se juega">How to Play</h2>
@@ -125,7 +146,7 @@ body.locked #deckNav{display:none}
       </div>
     </section>
 
-    <!-- 3 · CAN IT RUN DOOM -->
+    <!-- 4 · CAN IT RUN DOOM -->
     <section id="run" class="sector bg-pit">
       <div class="wrap">
         <div class="flex flex-wrap items-center gap-x-14 gap-y-8">
@@ -142,27 +163,6 @@ body.locked #deckNav{display:none}
             <p class="mt-2 text-sm leading-relaxed text-ash" data-en="Every device listed here has been shown running a working port. The full list lives at canitrundoom.org." data-es="Cada aparato de esta lista se ha mostrado corriendo un port funcional. La lista completa está en canitrundoom.org.">Every device below has been shown running a port.</p>
             <div id="runVideo" class="mt-5"></div>
             <div id="devB" class="mt-5 flex flex-wrap gap-3"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4 · HISTORIA -->
-    <section id="history" class="sector bg-abyss">
-      <div class="wrap">
-        <h2 class="h-sec" data-en="History" data-es="Historia">History</h2>
-        <p class="lede" data-en="Thirty-two years in seven releases. Tap any year to open that game." data-es="Treinta y dos años en siete lanzamientos. Toca cualquier año para abrir ese juego.">Thirty-two years in seven releases.</p>
-        <div id="timeline" class="tl mt-14"></div>
-        <div id="milestones" class="mt-16 grid gap-5 md:grid-cols-3"></div>
-        <div class="mt-16">
-          <h3 class="font-display text-4xl font-extrabold text-bone" data-en="Then and Now" data-es="Antes y ahora">Then and Now</h3>
-          <p class="mt-2 max-w-xl text-ash" data-en="Drag the bar. Flat sprites versus a modern engine: same idea, same speed." data-es="Arrastra la barra. Sprites planos contra un motor moderno: misma idea, misma velocidad.">Drag the bar.</p>
-          <div id="cmp" class="cmp mt-6 max-w-5xl">
-            <img class="now" id="cmpNow" alt="DOOM The Dark Ages gameplay" draggable="false">
-            <img class="then" id="cmpThen" alt="DOOM 1993 gameplay" draggable="false">
-            <span class="lab left-3 text-gore">1993</span><span class="lab right-3 text-hellfire">2025</span>
-            <div class="bar"></div>
-            <input id="cmpRange" type="range" min="2" max="98" value="50" aria-label="Compare 1993 and 2025">
           </div>
         </div>
       </div>
@@ -2726,6 +2726,7 @@ const GAME_IMGS = {
   "Icon of Sin": "armas/1994/Icon of Sin.jfif"
  },
  "1997": {
+  "Shotgun": "armas/1997/Shotgun.jfif",
   "Fists": "armas/1997/Fists.webp",
   "Chainsaw": "armas/1997/Chainsaw.jfif",
   "Pistol": "armas/1997/Pistol.jfif",
@@ -2816,9 +2817,9 @@ const GAME_IMGS = {
 
 const SECTORS = [
   { id: 'games',       n: '1', en: 'The Games',         es: 'Los juegos' },
-  { id: 'play',        n: '2', en: 'How to Play',       es: 'Cómo se juega' },
-  { id: 'run',         n: '3', en: 'Can it run DOOM?',  es: '¿Puede correr DOOM?' },
-  { id: 'history',     n: '4', en: 'History',           es: 'Historia' },
+  { id: 'history',     n: '2', en: 'History',           es: 'Historia' },
+  { id: 'play',        n: '3', en: 'How to Play',       es: 'Cómo se juega' },
+  { id: 'run',         n: '4', en: 'Can it run DOOM?',  es: '¿Puede correr DOOM?' },
   { id: 'creators',    n: '5', en: 'The Creators',      es: 'Los creadores' },
   { id: 'facts',       n: '6', en: 'Fun Facts',         es: 'Datos curiosos' },
   { id: 'quiz',        n: '7', en: 'Demon Quiz',        es: 'Quiz demoníaco' },
@@ -3721,8 +3722,7 @@ function resetKiosk() {
 }
 function bumpIdle() {
   clearTimeout(AT.idle);
-  AT.idle = setTimeout(showAttract, CONFIG.idleSeconds * 1000);
-}
+  AT.idle = setTimeout(showAttract, 600000);}
 
 /* ---------------------------- trucos ---------------------------- */
 const CODES = {

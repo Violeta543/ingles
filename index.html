@@ -176,7 +176,6 @@ body.locked #deckNav{display:none}
           <div>
             <h3 class="font-display text-6xl font-black text-hellfire">id Software</h3>
             <div id="studioImg"></div>
-            <p class="mt-5 leading-relaxed text-bone/90" data-en="Founded in February 1991 in Shreveport, Louisiana, by four young developers who had been making games for a shareware publisher. They moved to Mesquite, Texas, and within two years shipped the game that reorganized the industry around them." data-es="Fundado en febrero de 1991 en Shreveport, Luisiana, por cuatro jóvenes desarrolladores que hacían juegos para una editorial de shareware. Se mudaron a Mesquite, Texas, y en dos años lanzaron el juego que reorganizó la industria a su alrededor.">Founded in February 1991.</p>
             <div id="studio" class="mt-8 space-y-px"></div>
           </div>
           <div id="founders" class="grid gap-5 sm:grid-cols-2"></div>
@@ -202,7 +201,7 @@ body.locked #deckNav{display:none}
       <div class="wrap">
         <h2 class="h-sec" data-en="Demon Quiz" data-es="Quiz demoníaco">Demon Quiz</h2>
         <p class="lede" data-en="Think you know DOOM? Five questions, 25% damage per mistake. Beat the board." data-es="¿Crees que conoces DOOM? Cinco preguntas, 25% de daño por error. Supera el tablero.">Think you know DOOM?</p>
-        <div id="quizStage" class="plate bevel mt-10 min-h-[26rem] p-6 sm:p-10"></div>
+        <div id="quizStage" class="plate bevel mt-10 min-h-[26rem] p-6 sm:p-10" style="background-image:linear-gradient(rgba(10,4,5,.84),rgba(10,4,5,.94)),url('mejoras/imagen_fondo_quiz%20y%20fun_facts5.jpg');background-size:cover;background-position:center"></div>
       </div>
     </section>
   </main>
@@ -2882,22 +2881,22 @@ const MILESTONES = [
 ];
 
 /* Creadores. Para poner foto: img: 'creadores/john-carmack.jpg' (carpeta creadores/ junto al index.html). Imagen de la empresa: STUDIO_IMG. */
-const STUDIO_IMG = '';  // p. ej. 'creadores/id-software.jpg'
+const STUDIO_IMG = 'mejoras/id-software';  // guarda la imagen de la empresa como mejoras/id-software.jpg (o .png, .webp, .jpeg, .jfif)
 const FOUNDERS = [
   { n: 'John Carmack', r: { en: 'Programmer, co-founder', es: 'Programador, cofundador' },
-    key: { en: 'The engine genius behind DOOM', es: 'El genio de los motores detrás de DOOM' }, img: '',
+    key: { en: 'The engine genius behind DOOM', es: 'El genio de los motores detrás de DOOM' }, img: 'mejoras/creadorJohn Carmack.jfif',
     d: { en: 'Wrote the engines. His work on real-time rendering made Wolfenstein 3D, DOOM and Quake possible on ordinary PCs, and he pushed id to release its source code.',
          es: 'Escribió los motores. Su trabajo en renderizado en tiempo real hizo posibles Wolfenstein 3D, DOOM y Quake en PCs comunes, y empujó a id a liberar su código fuente.' } },
   { n: 'John Romero', r: { en: 'Designer, co-founder', es: 'Diseñador, cofundador' },
-    key: { en: 'The designer who gave DOOM its feel', es: 'El diseñador que le dio a DOOM su sensación de juego' }, img: '',
+    key: { en: 'The designer who gave DOOM its feel', es: 'El diseñador que le dio a DOOM su sensación de juego' }, img: 'mejoras/creadorJohn Romero.jfif',
     d: { en: 'Designed levels and shaped how the game felt to play. Many of the most famous maps in the original DOOM and DOOM II are his.',
          es: 'Diseñó niveles y definió cómo se sentía jugar. Muchos de los mapas más famosos de DOOM y DOOM II son suyos.' } },
   { n: 'Tom Hall', r: { en: 'Designer, co-founder', es: 'Diseñador, cofundador' },
-    key: { en: 'Wrote the DOOM Bible', es: 'Escribió la Biblia de DOOM' }, img: '',
+    key: { en: 'Wrote the DOOM Bible', es: 'Escribió la Biblia de DOOM' }, img: 'mejoras/creadorTom Hall.jfif',
     d: { en: 'Wrote the DOOM Bible, the early design document for the game. His more story-driven vision was cut back, and he left before release.',
          es: 'Escribió la DOOM Bible, el documento de diseño inicial del juego. Su visión más narrativa fue recortada y se fue antes del lanzamiento.' } },
   { n: 'Adrian Carmack', r: { en: 'Artist, co-founder', es: 'Artista, cofundador' },
-    key: { en: 'Drew the demons', es: 'Dibujó los demonios' }, img: '',
+    key: { en: 'Drew the demons', es: 'Dibujó los demonios' }, img: 'mejoras/creador_Adrian Carmack.jfif',
     d: { en: 'Created the art: the demons, the textures, the gore. No relation to John Carmack despite the surname.',
          es: 'Creó el arte: los demonios, las texturas, la sangre. Sin parentesco con John Carmack a pesar del apellido.' } },
 ];
@@ -2912,15 +2911,15 @@ const STUDIO_FACTS = [
 /* Datos curiosos. Para poner una imagen bajo el título: img: 'datos/mi-foto.jpg' (carpeta datos/ junto al index.html) */
 const FACTS = [
   { t: { en: 'Bill Gates sold Windows 95 with it', es: 'Bill Gates vendió Windows 95 con él' },
-    img: '',
+    img: 'mejoras/fun_facts1y2.jpg',
     d: { en: 'At a Microsoft event in October 1995, Gates appeared inside DOOM in a trench coat holding a shotgun, to convince developers that Windows was a serious gaming platform.',
          es: 'En un evento de Microsoft en octubre de 1995, Gates apareció dentro de DOOM con gabardina y escopeta, para convencer a los desarrolladores de que Windows era una plataforma seria para juegos.' } },
   { t: { en: 'More common than Windows itself', es: 'Más común que el propio Windows' },
-    img: '',
+    img: 'mejoras/fun_facts1y2.jpg',
     d: { en: 'At the time it was estimated that more PCs had DOOM installed than Windows 95. That estimate is exactly why Microsoft made that video.',
          es: 'En esa época se estimaba que más PCs tenían DOOM instalado que Windows 95. Esa estimación es justamente por qué Microsoft hizo ese video.' } },
   { t: { en: 'The chainsaw came from a horror film', es: 'La motosierra vino de una película de terror' },
-    img: '',
+    img: 'mejoras/fun_facts_3.jfif',
     d: { en: 'It was inspired by Evil Dead II. The team wanted a weapon that forced you to walk directly into the danger instead of shooting from a distance.',
          es: 'Fue inspirada por Evil Dead II. El equipo quería un arma que te obligara a caminar directo hacia el peligro en vez de disparar desde lejos.' } },
   { t: { en: 'It got banned at work', es: 'Lo prohibieron en el trabajo' },
@@ -2928,7 +2927,7 @@ const FACTS = [
     d: { en: 'Companies and universities blocked it in the nineties because so many people were playing deathmatch that it was saturating their internal networks.',
          es: 'Empresas y universidades lo bloquearon en los noventa porque tanta gente jugaba deathmatch que estaba saturando sus redes internas.' } },
   { t: { en: 'There are pentagrams inside the music', es: 'Hay pentagramas dentro de la música' },
-    img: '',
+    img: 'mejoras/imagen_fondo_quiz y fun_facts5.jpg',
     d: { en: 'Mick Gordon hid images in the 2016 soundtrack. Run the track "Cyberdemon" through a spectrogram and pentagrams and the number 666 appear in the waveform.',
          es: 'Mick Gordon escondió imágenes en la banda sonora de 2016. Pasa la pista "Cyberdemon" por un espectrograma y aparecen pentagramas y el número 666 en la onda.' } },
   { t: { en: 'The original has no jump button', es: 'El original no tiene botón de salto' },
@@ -2984,6 +2983,57 @@ const QUIZ = [
   { q: { en: 'Who composed the soundtrack of DOOM (2016)?', es: '¿Quién compuso la banda sonora de DOOM (2016)?' }, a: ['Hans Zimmer', 'Mick Gordon', 'Bobby Prince', 'Jesper Kyd'], c: 1 },
   { q: { en: 'What can you NOT do in the original 1993 DOOM?', es: '¿Qué NO puedes hacer en el DOOM original de 1993?' },
     a: [{ en: 'Jump', es: 'Saltar' }, { en: 'Shoot', es: 'Disparar' }, { en: 'Open doors', es: 'Abrir puertas' }, { en: 'Collect keys', es: 'Recoger llaves' }], c: 0 },
+  /* ---- 25 preguntas nuevas, todas basadas en lo que se expone en la página ---- */
+  { q: { en: 'In which year was the original DOOM released?', es: '¿En qué año salió el DOOM original?' },
+    a: ['1991', '1993', '1997', '2004'], c: 1 },
+  { q: { en: 'Which game is a prequel set in castles and battlefields, mixing medieval fantasy with science fiction?', es: '¿Qué juego es una precuela ambientada en castillos y campos de batalla, que mezcla fantasía medieval con ciencia ficción?' },
+    a: ['DOOM 3', 'DOOM Eternal', 'The Dark Ages', 'DOOM 64'], c: 2 },
+  { q: { en: 'How many silent years passed between DOOM 3 (2004) and the 2016 reboot?', es: '¿Cuántos años de silencio pasaron entre DOOM 3 (2004) y el reinicio de 2016?' },
+    a: [{ en: 'Six', es: 'Seis' }, { en: 'Ten', es: 'Diez' }, { en: 'Twelve', es: 'Doce' }, { en: 'Twenty', es: 'Veinte' }], c: 2 },
+  { q: { en: 'How many main games does our presentation cover?', es: '¿Cuántos juegos principales cubre nuestra exposición?' },
+    a: [{ en: 'Five', es: 'Cinco' }, { en: 'Six', es: 'Seis' }, { en: 'Seven', es: 'Siete' }, { en: 'Nine', es: 'Nueve' }], c: 2 },
+  { q: { en: 'Which game was remastered in 2020 with 60 frames per second and a new chapter of levels?', es: '¿Qué juego fue remasterizado en 2020 con 60 cuadros por segundo y un capítulo nuevo de niveles?' },
+    a: ['DOOM II', 'DOOM 64', 'DOOM 3', 'DOOM (2016)'], c: 1 },
+  { q: { en: 'In which game does combat become a puzzle solved at full speed, where every resource comes from a different attack?', es: '¿En qué juego el combate se vuelve un rompecabezas a toda velocidad, donde cada recurso viene de un ataque distinto?' },
+    a: ['DOOM (1993)', 'DOOM 3', 'DOOM Eternal', 'DOOM II'], c: 2 },
+  { q: { en: 'In DOOM Eternal, what does the chainsaw give you?', es: 'En DOOM Eternal, ¿qué te da la motosierra?' },
+    a: [{ en: 'Ammo', es: 'Munición' }, { en: 'Armor', es: 'Armadura' }, { en: 'Health', es: 'Vida' }, { en: 'Keys', es: 'Llaves' }], c: 0 },
+  { q: { en: 'Which weapon kills almost any demon in one hit in Eternal, but has limited charges?', es: '¿Qué arma mata a casi cualquier demonio de un golpe en Eternal, pero tiene cargas limitadas?' },
+    a: ['Crucible', 'Doomblade', 'Ballista', 'Unmaykr'], c: 0 },
+  { q: { en: 'Which weapon is unique to DOOM 64 and is upgraded by finding Demon Keys?', es: '¿Qué arma es exclusiva de DOOM 64 y se mejora al encontrar Llaves Demoníacas?' },
+    a: ['Soul Cube', 'BFG 9000', 'Unmaker', 'Plasma Rifle'], c: 2 },
+  { q: { en: 'Which DOOM 3 artifact devours souls and charges with every kill?', es: '¿Qué artefacto de DOOM 3 devora almas y se carga con cada muerte?' },
+    a: ['Flashlight', 'Soul Cube', 'Chainsaw', 'Grenades'], c: 1 },
+  { q: { en: 'In DOOM 3, which item can you NOT hold at the same time as a weapon?', es: 'En DOOM 3, ¿qué objeto NO puedes sostener al mismo tiempo que un arma?' },
+    a: ['Chainsaw', 'Soul Cube', 'Flashlight', 'Fists'], c: 2 },
+  { q: { en: 'Which is the most powerful weapon in the arsenal, firing a huge ball of green energy?', es: '¿Cuál es el arma más poderosa del arsenal, que dispara una enorme bola de energía verde?' },
+    a: ['Rocket Launcher', 'Plasma Rifle', 'Super Shotgun', 'BFG 9000'], c: 3 },
+  { q: { en: 'What can you do with the Shield Saw in The Dark Ages?', es: '¿Qué puedes hacer con el Shield Saw en The Dark Ages?' },
+    a: [{ en: 'Block, parry and throw it', es: 'Bloquear, parar y lanzarlo' }, { en: 'Heal yourself', es: 'Curarte' }, { en: 'Fly over lava', es: 'Volar sobre la lava' }, { en: 'Open locked doors', es: 'Abrir puertas cerradas' }], c: 0 },
+  { q: { en: 'Which boss has a rocket launcher for an arm?', es: '¿Qué jefe tiene un lanzacohetes en lugar de brazo?' },
+    a: ['Spider Mastermind', 'Icon of Sin', 'Cyberdemon', 'Mother Demon'], c: 2 },
+  { q: { en: 'Which boss is a giant brain on mechanical spider legs?', es: '¿Qué jefe es un cerebro gigante sobre patas de araña mecánicas?' },
+    a: ['Cyberdemon', 'Spider Mastermind', 'Guardian of Hell', 'Khan Maykr'], c: 1 },
+  { q: { en: 'Who is the final boss of DOOM 64?', es: '¿Quién es el jefe final de DOOM 64?' },
+    a: ['Icon of Sin', 'Guardian of Hell', 'Mother Demon', 'Cyberdemon'], c: 2 },
+  { q: { en: 'Who is the final boss of DOOM 3?', es: '¿Quién es el jefe final de DOOM 3?' },
+    a: ['Sabaoth', 'Guardian of Hell', 'Vagary', 'Cyberdemon'], c: 1 },
+  { q: { en: 'Who is the main antagonist of DOOM Eternal?', es: '¿Quién es la antagonista principal de DOOM Eternal?' },
+    a: ['Kreed Maykr', 'Marauder', 'Gladiator', 'Khan Maykr'], c: 3 },
+  { q: { en: 'Who wrote the DOOM Bible?', es: '¿Quién escribió la Biblia de DOOM?' },
+    a: ['John Romero', 'Tom Hall', 'Adrian Carmack', 'John Carmack'], c: 1 },
+  { q: { en: 'Who drew the demons of DOOM?', es: '¿Quién dibujó los demonios de DOOM?' },
+    a: ['Tom Hall', 'John Romero', 'Adrian Carmack', 'John Carmack'], c: 2 },
+  { q: { en: 'In which city was id Software founded in 1991?', es: '¿En qué ciudad se fundó id Software en 1991?' },
+    a: ['Dallas', 'Shreveport', 'Seattle', 'Los Angeles'], c: 1 },
+  { q: { en: 'Why has DOOM been made to run on calculators, ATMs and even tractors?', es: '¿Por qué se ha hecho correr DOOM en calculadoras, cajeros e incluso tractores?' },
+    a: [{ en: 'Its source code was released in 1997', es: 'Su código fuente se liberó en 1997' }, { en: 'It only works on old devices', es: 'Solo funciona en aparatos viejos' }, { en: 'It needs very powerful hardware', es: 'Necesita hardware muy potente' }, { en: 'It was made for calculators', es: 'Fue hecho para calculadoras' }], c: 0 },
+  { q: { en: 'Which key performs a Glory Kill in DOOM (2016)?', es: '¿Qué tecla hace un Glory Kill en DOOM (2016)?' },
+    a: ['E', 'Space', 'F', 'W'], c: 2 },
+  { q: { en: 'Who appeared inside DOOM in 1995 to promote Windows 95?', es: '¿Quién apareció dentro de DOOM en 1995 para promocionar Windows 95?' },
+    a: ['Steve Jobs', 'Bill Gates', 'John Carmack', 'Mick Gordon'], c: 1 },
+  { q: { en: 'What do you see in the 2016 track "Cyberdemon" when you play it through a spectrogram?', es: '¿Qué se ve en el tema "Cyberdemon" de 2016 al pasarlo por un espectrograma?' },
+    a: [{ en: 'Pentagrams and the number 666', es: 'Pentagramas y el número 666' }, { en: 'A map of Mars', es: 'Un mapa de Marte' }, { en: 'The id Software logo', es: 'El logo de id Software' }, { en: 'A chainsaw', es: 'Una motosierra' }], c: 0 },
 ];
 
 /* ---- Textos de interfaz dinámicos ---- */
@@ -3568,7 +3618,7 @@ function speak(text) {
 
 /* ---------------------------- resto de secciones ---------------------------- */
 /* Video de "Documentado, con video": ruta a un archivo (videos/mi-video.mp4) o enlace de YouTube. Vacío = sin video. */
-const RUN_VIDEO = '';
+const RUN_VIDEO = './mejoras/doom.mp4';
 function renderRunVideo() {
   const box = $('#runVideo'), u = RUN_VIDEO.trim();
   if (!u) { box.innerHTML = ''; return; }
@@ -3600,17 +3650,24 @@ function renderCreators() {
   $('#founders').innerHTML = FOUNDERS.map(p => `
     <article class="plate bevel p-6">
       ${p.img ? `<img src="${esc(p.img)}" alt="${esc(p.n)}" loading="lazy" class="mb-4 w-full border border-ash/30 object-cover object-top" style="aspect-ratio:4/3" onerror="this.remove()">` : ''}
-      <h3 class="font-display text-3xl font-extrabold text-bone">${esc(p.n)}</h3>
-      <div class="mt-1 text-xs font-bold text-hellfire">${esc(t(p.r))}</div>
-      <p style="border-left:4px solid #F2C400" class="mt-3 pl-3 font-display text-2xl font-extrabold leading-tight text-hazard">${esc(t(p.key))}</p>
-      <p class="mt-3 text-sm leading-relaxed text-ash">${esc(t(p.d))}</p></article>`).join('');
-  $('#studioImg').innerHTML = STUDIO_IMG ? `<img src="${esc(STUDIO_IMG)}" alt="id Software" loading="lazy" class="mt-5 w-full border border-ash/30 object-cover" style="aspect-ratio:16/9" onerror="this.remove()">` : '';
+      <h3 class="font-display text-3xl font-extrabold text-hazard">${esc(p.n)}</h3>
+      <p style="border-left:4px solid #F2C400" class="mt-3 pl-3 font-display text-2xl font-extrabold leading-tight text-hazard">${esc(t(p.key))}</p></article>`).join('');
+  (function studioImage() {
+    const box = $('#studioImg'); if (!box || !STUDIO_IMG) return;
+    const list = ['jpg', 'png', 'webp', 'jpeg', 'jfif'].map(e => STUDIO_IMG + '.' + e);
+    const next = () => {
+      const src = list.shift(); if (!src) { box.innerHTML = ''; return; }
+      const im = new Image(); im.onload = () => { box.innerHTML = `<img src="${esc(src)}" alt="id Software" class="mt-5 w-full border border-ash/30" style="max-height:17rem;object-fit:contain;background:#12080A;padding:.5rem">`; };
+      im.onerror = next; im.src = src;
+    };
+    next();
+  })();
 }
 function renderFacts() {
   $('#factGrid').innerHTML = FACTS.map(f => `
     <article class="plate bevel p-7" style="box-shadow: inset 5px 0 0 #F2C400"><h3 class="font-display text-3xl font-extrabold leading-tight text-hazard">${esc(t(f.t))}</h3>
       ${f.img ? `<img src="${esc(f.img)}" alt="${esc(t(f.t))}" loading="lazy" class="mt-4 w-full border border-ash/30 object-cover" style="aspect-ratio:16/9" onerror="this.remove()">` : ''}
-      <p class="mt-3 text-[.95rem] leading-relaxed text-bone/90">${esc(t(f.d))}</p></article>`).join('');
+      ${f.img ? '' : `<p class="mt-3 text-[.95rem] leading-relaxed text-bone/90">${esc(t(f.d))}</p>`}</article>`).join('');
   $('#cheats').innerHTML = CHEATS.map(c => `<div class="row"><code>${esc(c.c)}</code><span class="text-bone/90">${esc(t(c.d))}</span></div>`).join('')
     + `<div class="px-4 py-3 text-sm text-ash"><span class="cur">&gt;</span></div>`;
 }
